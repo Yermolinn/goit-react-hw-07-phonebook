@@ -1,2 +1,1 @@
-export { submitSchema } from './constants';
-export { filterContacts } from './functions';
+export { submitSchema } from "./validationForm";

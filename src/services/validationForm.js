@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const submitSchema = Yup.object().shape({
+export const submitSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
@@ -21,7 +21,3 @@ const submitSchema = Yup.object().shape({
     )
     .required('Required'),
 });
-
-const STORAGE_KEY = 'contacts';
-
-export { submitSchema, STORAGE_KEY };

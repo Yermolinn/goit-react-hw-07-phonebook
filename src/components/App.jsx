@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
 import { selectIsLoading, selectError } from './redux/selectors';
 import { fetchContacts } from './redux/operations';
-// import { Section } from './section/Section';
+import { Section } from './section/Section';
 import { ContactForm } from 'components/contactForm/ContactForm';
 import { ContactList } from './contactList/ContactList';
 import { Filter } from './filter/Filter';
@@ -25,36 +25,14 @@ export const App = () => {
   return (
     <div>
       {isLoading && <Loader />}
-      <section>
-        <div className="container">
-          <h1>Phonebook</h1>
-          <ContactForm />
-          <h2>Contacts</h2>
-          <Filter />
-          {!isLoading && !error && <ContactList />}
-          <Toaster />
-        </div>
-      </section>
+      <Section title={'Phonebook'}>
+        <ContactForm />
+      </Section>
+      <Section title={'Contacts:'}>
+        <Filter />
+        {!isLoading && !error && <ContactList />}
+        <Toaster />
+      </Section>
     </div>
   );
 };
-
-// ______________;
-// import { Section } from './section/Section';
-// import { ContactForm } from 'components/contactForm/ContactForm';
-// import { ContactList } from './contactList/ContactList';
-// import { Filter } from './filter/Filter';
-
-// export const App = () => {
-//   return (
-//     <>
-//       <Section title={'Phonebook'}>
-//         <ContactForm />
-//       </Section>
-//       <Section title={'Contacts:'}>
-//         <Filter />
-//         <ContactList />
-//       </Section>
-//     </>
-//   );
-// };

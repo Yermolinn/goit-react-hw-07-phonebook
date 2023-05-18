@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
-export const Contact = ({ name, number }) => {
+export const Contact = ({ name, phone }) => {
   return (
     <div className={css.itemContainer}>
-      <p className={css.text}>{`${name}: ${number}`}</p>
+      <p className={css.text}>{`${name}: ${phone}`}</p>
     </div>
   );
 };
